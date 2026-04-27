@@ -12,6 +12,8 @@ A Slatewave theme for [LSD](https://github.com/lsd-rs/lsd) — the next-gen `ls`
 
 > _Slate below, teal above._
 
+![Slatewave preview](docs/preview.png)
+
 </div>
 
 ---
