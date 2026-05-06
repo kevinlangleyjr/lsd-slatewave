@@ -10,7 +10,7 @@
 # scheme you like (vivid, trapd00r, etc.).
 
 # Owner / group columns
-user:  "#e2e8f0"    # slate-200   — fg_default
+user:  "#fda4af"    # rose-300    — owner highlight
 group: "#94a3b8"    # slate-400   — fg_muted
 
 # rwx permission bits, ACL indicator, SELinux context

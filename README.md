@@ -92,7 +92,6 @@ Slatewave shares its palette with the companion themes. Every color resolves to 
 
 | | Hex | Tailwind | Role |
 |---|---|---|---|
-| ![#e2e8f0](https://placehold.co/20x20/e2e8f0/e2e8f0.png) | `#e2e8f0` | slate-200 | **user** (owner column) |
 | ![#cbd5e1](https://placehold.co/20x20/cbd5e1/cbd5e1.png) | `#cbd5e1` | slate-300 | small file size, git default |
 | ![#94a3b8](https://placehold.co/20x20/94a3b8/94a3b8.png) | `#94a3b8` | slate-400 | **group**, older dates |
 | ![#64748b](https://placehold.co/20x20/64748b/64748b.png) | `#64748b` | slate-500 | no-access, non-file size, git unmodified, invalid inode |
@@ -113,6 +112,7 @@ Slatewave shares its palette with the companion themes. Every color resolves to 
 |---|---|---|---|
 | ![#38bdf8](https://placehold.co/20x20/38bdf8/38bdf8.png) | `#38bdf8` | sky-400 | SELinux context |
 | ![#7dd3fc](https://placehold.co/20x20/7dd3fc/7dd3fc.png) | `#7dd3fc` | sky-300 | valid hard-link count, git renamed |
+| ![#fda4af](https://placehold.co/20x20/fda4af/fda4af.png) | `#fda4af` | rose-300 | **user** (owner column) |
 | ![#fb7185](https://placehold.co/20x20/fb7185/fb7185.png) | `#fb7185` | rose-400 | **exec bit**, invalid links, git deleted |
 | ![#ef5350](https://placehold.co/20x20/ef5350/ef5350.png) | `#ef5350` | red-bright | git conflicted |
 | ![#b388ff](https://placehold.co/20x20/b388ff/b388ff.png) | `#b388ff` | — | exec-sticky bit, valid inode |
