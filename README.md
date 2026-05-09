@@ -22,7 +22,7 @@ A Slatewave theme for [LSD](https://github.com/lsd-rs/lsd) — the next-gen `ls`
 
 LSD splits its output into column *roles* — owner, permissions, size, date, git status, tree edges — and this theme recolors each of them to match the VSCode and Alacritty Slatewave ports. File-type colors (directories, symlinks, archives, media, …) are driven by `LS_COLORS`, so Slatewave composes with any `LS_COLORS` scheme you already run — [vivid](https://github.com/sharkdp/vivid), [trapd00r/LS_COLORS](https://github.com/trapd00r/LS_COLORS), or the default.
 
-Tuned against LSD 1.0+, which accepts `#rrggbb` hex alongside the legacy named colors and ANSI 256 indices.
+Two palette files ship: [`colors.yaml`](colors.yaml) uses `#rrggbb` hex (LSD ≥ 1.1) and [`colors-256.yaml`](colors-256.yaml) uses ANSI 256-color indices (LSD ≥ 1.0; required for 1.0.x, which silently ignores hex). Run `lsd --version` to pick — `1.0.x` → 256, `1.1+` → hex.
 
 Highlights:
 
@@ -36,7 +36,7 @@ Highlights:
 
 ## Requirements
 
-- **LSD** ≥ 1.0 (hex color support in `colors.yaml`) — [install guide](https://github.com/lsd-rs/lsd#installation)
+- **LSD** ≥ 1.0 — [install guide](https://github.com/lsd-rs/lsd#installation). Hex colors (`colors.yaml`) need LSD ≥ 1.1; on 1.0.x use `colors-256.yaml`.  Check with `lsd --version`.
 - A **Nerd Font** if you want the fancy icons — `icons.theme: fancy` in LSD's config. Tested with Hack Nerd Font and MesloLGS NF. Falls back to `icons.theme: unicode` cleanly.
 
 ---
@@ -45,20 +45,36 @@ Highlights:
 
 LSD looks for its config under `$XDG_CONFIG_HOME/lsd/` (typically `~/.config/lsd/`) on macOS and Linux, and `%APPDATA%\lsd\` on Windows.
 
+### Which file?
+
+| Your `lsd --version` | Use | Why |
+|---|---|---|
+| 1.1.0 or newer | `colors.yaml` (hex) | Truer color match against the rest of the Slatewave family. |
+| 1.0.x | `colors-256.yaml` (256-index) | LSD 1.0.x silently ignores hex — the theme would fall back to defaults. |
+
+Both files install to the same path (`~/.config/lsd/colors.yaml`); only the source differs.
+
 ### Clone + symlink
 
 ```sh
 git clone https://github.com/kevinlangleyjr/lsd-slatewave.git \
   ~/.config/lsd-slatewave
 mkdir -p ~/.config/lsd
+# LSD ≥ 1.1
 ln -sf ~/.config/lsd-slatewave/colors.yaml ~/.config/lsd/colors.yaml
+# or, on LSD 1.0.x
+ln -sf ~/.config/lsd-slatewave/colors-256.yaml ~/.config/lsd/colors.yaml
 ```
 
 ### Or: curl the file straight in
 
 ```sh
 mkdir -p ~/.config/lsd
+# LSD ≥ 1.1
 curl -fsSL https://raw.githubusercontent.com/kevinlangleyjr/lsd-slatewave/main/colors.yaml \
+  -o ~/.config/lsd/colors.yaml
+# or, on LSD 1.0.x
+curl -fsSL https://raw.githubusercontent.com/kevinlangleyjr/lsd-slatewave/main/colors-256.yaml \
   -o ~/.config/lsd/colors.yaml
 ```
 

@@ -1,0 +1,62 @@
+---
+# Slatewave — LSD (lsd-rs/lsd) theme — ANSI 256-color index variant
+# https://getslatewave.com
+#
+# For LSD 1.0.x, which silently ignores hex strings in colors.yaml. Prefer
+# colors.yaml on LSD ≥ 1.1 — the truecolor hex values land closer to the
+# Tailwind palette the rest of the Slatewave family uses. Index choices
+# below are nearest-match against the standard xterm 256-color palette.
+
+# Owner / group columns
+user:  217   # rose-300    — owner highlight
+group: 103   # slate-400   — fg_muted
+
+# rwx permission bits, ACL indicator, SELinux context
+permission:
+  read:        86    # teal-300    — signature accent; readable
+  write:       214   # amber-400   — caution; writable
+  exec:        210   # rose-400    — hot; executable
+  exec-sticky: 141   # purple      — rare setuid / sticky bit
+  no-access:   66    # slate-500   — muted "-" placeholder
+  octal:       31    # cyan-700    — --permission=octal suffix
+  acl:         123   # cyan-300    — extended ACL indicator
+  context:     75    # sky-400     — SELinux label
+
+# Modified-time column — freshness ramp from teal to slate
+date:
+  hour-old: 86    # teal-300    — changed in the last hour
+  day-old:  122   # teal-200    — changed today
+  older:    103   # slate-400   — anything older
+
+# Size column — quiet for small, warm for large
+size:
+  none:   66    # slate-500   — not a regular file
+  small:  252   # slate-300   — fg_subtle
+  medium: 214   # amber-400
+  large:  130   # amber-700
+
+# Inode column (--inode / -i)
+inode:
+  valid:   141   # purple
+  invalid: 66    # slate-500
+
+# Hard-link count column
+links:
+  valid:   117   # sky-300
+  invalid: 210   # rose-400
+
+# Tree-view guide lines (--tree)
+tree-edge: 60   # slate-600   — quiet structural chrome
+
+# Git status column (--git)
+git-status:
+  default:        252   # slate-300   — catchall
+  unmodified:     66    # slate-500   — "."
+  ignored:        60    # slate-600   — "!!"
+  new-in-index:   86    # teal-300    — staged add (A)
+  new-in-workdir: 122   # teal-200    — untracked (??)
+  typechange:     130   # amber-700   — type change (T)
+  deleted:        210   # rose-400    — deleted (D)
+  renamed:        117   # sky-300     — renamed (R)
+  modified:       214   # amber-400   — modified (M)
+  conflicted:     203   # red-bright  — conflicted (U)

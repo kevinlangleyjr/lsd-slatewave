@@ -4,10 +4,11 @@
 #
 # A calm, slate-and-teal palette tuned to match the Slatewave theme family
 # (VSCode, Alacritty, Ghostty, Obsidian, Starship, …). Values are hex strings —
-# LSD 1.0+ accepts "#rrggbb" alongside the legacy named colors and the ANSI
-# 256-color index. File-type colors (directories, executables, archives, …)
-# are driven by LS_COLORS, not this file — pair Slatewave with any LS_COLORS
-# scheme you like (vivid, trapd00r, etc.).
+# LSD ≥ 1.1 accepts "#rrggbb" alongside the legacy named colors and the ANSI
+# 256-color index. On LSD 1.0.x, hex values are silently ignored; use the
+# sibling colors-256.yaml instead. File-type colors (directories, executables,
+# archives, …) are driven by LS_COLORS, not this file — pair Slatewave with
+# any LS_COLORS scheme you like (vivid, trapd00r, etc.).
 
 # Owner / group columns
 user:  "#fda4af"    # rose-300    — owner highlight
